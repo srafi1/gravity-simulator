@@ -1,0 +1,73 @@
+<html>
+  
+  <head>
+    <title>Super Awesome Simulation</title>
+    <script type="text/javascript" src="p5.min.js"></script>
+    <script type="text/javascript" src="p5.dom.js"></script>
+    <script type="text/javascript" src="sketch.js"></script>
+    <style>
+      .container {
+      height: 80%;
+      width: 80%;
+      background: #aaccff;
+      padding: 20px;
+      }
+
+      .p5div {
+      width: 70%;
+      height: 100%;
+      float: left;
+      }
+
+      .controlsdiv {
+      width: 25%;
+      height: 100%;
+      float: right;
+      padding-left: 10px;
+      padding-right: 10px;
+      background: #ccddff;
+      }
+
+      .status {
+      background: #aaddaa;
+      padding: 5px;
+      }
+
+      .create {
+      background: #ffaaaa;
+      padding: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <center>
+      <h1>Gravity Simulator</h1><br>
+      <div class="container">
+	<div class="p5div" id="holder">
+	</div>
+
+	<div class="controlsdiv">
+	  <h2>Controls</h2>
+	  <button onclick="pause()">Pause</button><br><br>
+	  <div class="status">
+	    <p>Mass: <span name="mass"> kg</p>
+	    <p>Velocity (X): <span name="velocityx"></span> m/s</p>
+	    <p>Velocity (Y): <span name="velocityy"></span> m/s</p>
+	    <p>Acceleration (X): <span name="accelerationx"></span> m/s^2</p>
+	    <p>Acceleration (Y): <span name="accelerationy"></span> m/s^2</p>
+	    <p name="selected"><b>Select a planet</b></p>
+	  </div>
+	  <br>
+	  <div class="create">
+	    Mass: <input type="number" name="massInput"></input><br>
+	    Radius: <input type="number" name="radiusInput" value="50"></input><br>
+	    <input type="checkbox" name="fixedInput">Fixed?</input><br>
+	    <button onclick="createPlanet()">Create Planet</button><br>
+	  </div>
+	</div>
+      </div>
+    </center>
+  </body>
+  
+</html>

@@ -1,0 +1,9 @@
+function setup() {
+    var holder = select("#holder");
+    createCanvas(holder.width, holder.height).parent('holder');
+}
+
+function draw() {
+    background(0);
+    ellipse(width/2, height/2, 50, 50);
+}
