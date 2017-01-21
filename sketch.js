@@ -37,8 +37,9 @@ function update() {
 	for (var j = planets.length - 1; j >=0; j--) {
 	    if (i != j && !planets[i].fixed) {
 		if (gravitate(planets[i], planets[j])) {
+		    if (planets[i] == selected)
+			selected = null;
 		    planets.splice(i, 1);
-		    selected = null;
 		    break;
 		}
 	    }
@@ -75,6 +76,11 @@ function updateSelected() {
     document.getElementsByName("accelerationx")[0].innerHTML = ax.substring(0, Math.min(ax.length, 5));
     document.getElementsByName("accelerationy")[0].innerHTML = ay.substring(0, Math.min(ay.length, 5));
     document.getElementsByName("selected")[0].innerHTML = extra;
+}
+
+function deleteSelected() {
+    planets.splice(planets.indexOf(selected), 1);
+    selected = null;
 }
 
 function mouseClicked() {
