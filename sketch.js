@@ -18,7 +18,8 @@ function draw() {
 	paint(p);
     });
 
-    updateSelected();
+    if (frameCount % 30 == 0)
+	updateSelected();
 
     if (chooseXY) {
 	fill(255);
@@ -34,6 +35,8 @@ function draw() {
 
 function update() {
     for (var i = planets.length - 1; i >=0; i--) {
+	planets[i].ax = 0;
+	planets[i].ay = 0;
 	for (var j = planets.length - 1; j >=0; j--) {
 	    if (i != j && !planets[i].fixed) {
 		if (gravitate(planets[i], planets[j])) {
@@ -70,11 +73,11 @@ function updateSelected() {
 	extra = "";
     }
 
-    document.getElementsByName("mass")[0].innerHTML = m.substring(0, Math.min(m.length, 5));
-    document.getElementsByName("velocityx")[0].innerHTML = vx.substring(0, Math.min(vx.length, 5));
-    document.getElementsByName("velocityy")[0].innerHTML = vy.substring(0, Math.min(vy.length, 5));
-    document.getElementsByName("accelerationx")[0].innerHTML = ax.substring(0, Math.min(ax.length, 5));
-    document.getElementsByName("accelerationy")[0].innerHTML = ay.substring(0, Math.min(ay.length, 5));
+    document.getElementsByName("mass")[0].innerHTML = m;//.substring(0, Math.min(m.length, 5));
+    document.getElementsByName("velocityx")[0].innerHTML = vx;//.substring(0, Math.min(vx.length, 5));
+    document.getElementsByName("velocityy")[0].innerHTML = vy;//.substring(0, Math.min(vy.length, 5));
+    document.getElementsByName("accelerationx")[0].innerHTML = ax;//.substring(0, Math.min(ax.length, 5));
+    document.getElementsByName("accelerationy")[0].innerHTML = ay;//.substring(0, Math.min(ay.length, 5));
     document.getElementsByName("selected")[0].innerHTML = extra;
 }
 
@@ -124,6 +127,7 @@ function paint(p) {
 function reset() {
     selected = null;
     planets = [];
+    pause();
 }
 
 function createPlanet(nx, ny, nvx, nvy, nmass, nradius, nfixed) {
@@ -145,8 +149,6 @@ function createPlanet(nx, ny, nvx, nvy, nmass, nradius, nfixed) {
 	    this.vy += this.ay;
 	    this.x += this.vx;
 	    this.y += this.vy;
-	    this.ax = 0;
-	    this.ay = 0;
 	}
     };
 }
