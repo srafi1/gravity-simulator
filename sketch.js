@@ -122,6 +122,12 @@ function paint(p) {
     else
 	noStroke();
     ellipse(p.x, p.y, p.radius*2, p.radius*2);
+    if (p == selected) {
+	stroke(0, 0, 255);
+	line(p.x, p.y, p.x + 60*p.ax, p.y + 60*p.ay);
+	stroke(255, 0, 0);
+	line(p.x, p.y, p.x + 60*p.vx, p.y + 60*p.vy);
+    }
 }
 
 function reset() {

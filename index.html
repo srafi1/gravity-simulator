@@ -38,6 +38,14 @@
       padding: 5px;
       }
 
+      .vel {
+      color: #ff0000;
+      }
+
+      .acc {
+      color: #0000ff;
+      }
+
       button {
       font-size: 24px;
       }
@@ -68,10 +76,10 @@
 	  <p><button id="pbutton" onclick="play()">Play</button></p><br>
 	  <div class="status">
 	    <p>Mass: <span name="mass"> kg</p>
-	    <p>Velocity (X): <span name="velocityx"></span> m/s</p>
-	    <p>Velocity (Y): <span name="velocityy"></span> m/s</p>
-	    <p>Acceleration (X): <span name="accelerationx"></span> m/s^2</p>
-	    <p>Acceleration (Y): <span name="accelerationy"></span> m/s^2</p>
+	    <p class="vel">Velocity (X): <span name="velocityx"></span> m/s</p>
+	    <p class="vel">Velocity (Y): <span name="velocityy"></span> m/s</p>
+	    <p class="acc">Acceleration (X): <span name="accelerationx"></span> m/s^2</p>
+	    <p class="acc">Acceleration (Y): <span name="accelerationy"></span> m/s^2</p>
 	    <p name="selected"><b>Select a planet</b></p>
 	    <p><button onclick="deleteSelected()">Delete</button></p>
 	  </div>
