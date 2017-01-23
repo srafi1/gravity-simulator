@@ -165,8 +165,8 @@ function gravitate(p1, p2) {
     g = m/(d*d),
     deltax = p1.x - p2.x,
     deltay = p1.y - p2.y;
-    p1.ax = g*deltax/d/p1.mass*-1;
-    p1.ay = g*deltay/d/p1.mass*-1;
+    p1.ax += g*deltax/d/p1.mass*-1;
+    p1.ay += g*deltay/d/p1.mass*-1;
 
     return (dist(p1.x, p1.y, p2.x, p2.y) <= p1.radius + p2.radius) && (p1.mass <= p2.mass);
 }
