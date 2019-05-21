@@ -75,20 +75,20 @@
 	<div class="controlsdiv">
 	  <p><button id="pbutton" onclick="play()">Play</button></p><br>
 	  <div class="status">
-	    <p>Mass: <span name="mass"> kg</p>
-	    <p class="vel">Velocity (X): <span name="velocityx"></span> m/s</p>
-	    <p class="vel">Velocity (Y): <span name="velocityy"></span> m/s</p>
-	    <p class="acc">Acceleration (X): <span name="accelerationx"></span> m/s^2</p>
-	    <p class="acc">Acceleration (Y): <span name="accelerationy"></span> m/s^2</p>
-	    <p name="selected"><b>Select a planet</b></p>
+	    <p>Mass: <span id="mass"> kg</p>
+	    <p class="vel">Velocity (X): <span id="velocityx"></span> m/s</p>
+	    <p class="vel">Velocity (Y): <span id="velocityy"></span> m/s</p>
+	    <p class="acc">Acceleration (X): <span id="accelerationx"></span> m/s^2</p>
+	    <p class="acc">Acceleration (Y): <span id="accelerationy"></span> m/s^2</p>
+	    <p id="selected"><b>Select a planet</b></p>
 	    <p><button onclick="deleteSelected()">Delete</button></p>
 	  </div>
 	  <br>
 	  <div class="create">
-	    Mass[kg]: <input type="number" name="massInput"></input><br>
-	    Radius[m]: <input type="number" name="radiusInput"></input><br>
-	    <input type="checkbox" name="fixedInput">Fixed position?</input><br>
-	    <span name="createStatus"><button onclick="readyPlanet()">Create Planet</button></span><br>
+	    <label>Mass[kg]: <input type="number" id="massInput"></input></label><br>
+	    <label>Radius[m]: <input type="number" id="radiusInput"></input></label><br>
+      <label><input type="checkbox" id="fixedInput">Fixed position?</input></label><br>
+	    <span id="createStatus"><button onclick="readyPlanet()">Create Planet</button></span><br>
 	  </div><br>
 	  <p><button onclick="reset()">Reset</button></p>
 	</div>
